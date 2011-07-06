@@ -192,6 +192,22 @@ html:
       <li>three(2)</li>
     </ul>
     
+haml will also recognize iteration over an array 
+within the template:
+    
+    %ul
+      - each item in ['item1', 'item2', 'item3']
+        %li{ id: 'myitem-' + item }= item
+    
+html:
+
+    <ul>
+      <li id="myitem-item1">item1</li>
+      <li id="myitem-item2">item2</li>
+      <li id="myitem-item3">item3</li>
+    </ul>
+    
+    
 ## Doctypes
 
 Defaults to transitional:
